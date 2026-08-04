@@ -1,52 +1,22 @@
-# Perth Bhangra Academy Website
+# Perth Bhangra Academy Website — Version 2
 
-Animated one-page website built with HTML, CSS and JavaScript.
+This GitHub Pages-ready version includes the real PBA logo, the supplied academy photograph, responsive navigation, loading animation, scroll reveals and animated counters.
 
-## Files
+## Upload update to GitHub
 
-- `index.html` — website text and sections
-- `styles.css` — design, mobile layout and animations
-- `script.js` — menu, scroll effects and animated counters
-- `assets/` — add your photos here
+1. Open the existing GitHub repository.
+2. Select **Add file → Upload files**.
+3. Upload `index.html`, `styles.css`, `script.js`, and the `assets` folder.
+4. Choose **Commit changes**.
+5. GitHub Pages will update automatically after approximately 1–3 minutes.
 
-## Add your photographs
+## Current assets
 
-Place your images inside the `assets` folder using these exact names:
+- `assets/logo.jpg`
+- `assets/hero.jpg`
 
-- `hero.jpg`
-- `class-placeholder.jpg`
-- `competition.jpg`
-- `gallery-1.jpg`
-- `gallery-2.jpg`
-- `gallery-3.jpg`
-- `gallery-4.jpg`
+The current photo is temporary and can later be replaced by uploading another landscape image with the same filename `hero.jpg`.
 
-You can later use separate images for each class by changing the CSS.
+## Before final launch
 
-## Add your enrolment form
-
-Open `index.html` and find:
-
-```html
-href="https://forms.google.com"
-```
-
-Replace that link with your published Google Form URL.
-
-## Add contact details
-
-In `index.html`, replace:
-
-- `your@email.com`
-- `+61 000 000 000`
-- Instagram, Facebook, TikTok and YouTube `href="#"` links
-
-## Publish through GitHub Pages
-
-1. Create a new public GitHub repository.
-2. Upload all files and the `assets` folder.
-3. Open repository **Settings**.
-4. Select **Pages**.
-5. Under **Build and deployment**, select **Deploy from a branch**.
-6. Select the `main` branch and `/ (root)`.
-7. Save.
+Replace the temporary email, phone, social links and Google Form link in `index.html`.

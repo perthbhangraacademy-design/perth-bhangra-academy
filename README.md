@@ -1,22 +1,50 @@
-# Perth Bhangra Academy Website — Version 2
+# Perth Bhangra Academy — GitHub Pages Website
 
-This GitHub Pages-ready version includes the real PBA logo, the supplied academy photograph, responsive navigation, loading animation, scroll reveals and animated counters.
+This version recreates the selected dark digital/glass homepage style.
 
-## Upload update to GitHub
+## Included
 
-1. Open the existing GitHub repository.
-2. Select **Add file → Upload files**.
-3. Upload `index.html`, `styles.css`, `script.js`, and the `assets` folder.
-4. Choose **Commit changes**.
-5. GitHub Pages will update automatically after approximately 1–3 minutes.
+- Real PBA logo
+- Real academy hero photograph
+- Glass navigation
+- White and metallic-blue typography
+- Animated loading screen
+- Hero image zoom
+- Text entrance animations
+- Digital orbit/grid effects
+- Achievement statistics
+- Responsive mobile navigation
+- About, Classes, Teams, Gallery, Competition, Join and Contact sections
 
-## Current assets
+## Upload to GitHub
 
-- `assets/logo.jpg`
-- `assets/hero.jpg`
+Upload these items to the root of your existing repository:
 
-The current photo is temporary and can later be replaced by uploading another landscape image with the same filename `hero.jpg`.
+- `index.html`
+- `styles.css`
+- `script.js`
+- `assets/`
 
-## Before final launch
+Commit the changes. GitHub Pages will update automatically.
 
-Replace the temporary email, phone, social links and Google Form link in `index.html`.
+## Update the Google Form
+
+In `index.html`, find:
+
+```html
+href="https://forms.google.com"
+```
+
+Replace it with your actual published Google Form URL.
+
+## Update contact and social links
+
+In `index.html`, replace:
+
+- `your@email.com`
+- `+61 000 000 000`
+- each social link using `href="#"`
+
+## Replace the hero image later
+
+Replace `assets/hero.jpg` with another landscape photo while keeping the same file name.

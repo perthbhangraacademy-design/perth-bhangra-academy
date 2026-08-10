@@ -1402,23 +1402,6 @@ footer p {
   color: #ffffff;
 }
 
-.enrolment-frame-wrap {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  background: #ffffff;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(180, 210, 255, 0.25);
-}
-
-.enrolment-frame {
-  display: block;
-  width: 100%;
-  min-height: 1350px;
-  border: 0;
-  background: #ffffff;
-}
 
 @media (max-width: 650px) {
 
@@ -1439,11 +1422,5 @@ footer p {
     display: none;
   }
 
-  .enrolment-frame-wrap {
-    border-radius: 14px;
-  }
 
-  .enrolment-frame {
-    min-height: 1650px;
-  }
 }

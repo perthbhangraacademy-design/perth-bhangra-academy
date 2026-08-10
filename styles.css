@@ -1370,3 +1370,80 @@ footer p {
 .folk-script br {
   line-height: 0;
 }
+/* =========================
+   JOIN / ENROLMENT SECTION
+   ========================= */
+
+.join-section {
+  padding: 100px 5vw;
+  background: #050a12;
+}
+
+.join-copy {
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+.join-copy h2 {
+  margin: 10px 0 18px;
+}
+
+.join-copy p {
+  max-width: 760px;
+  color: #b7c1cf;
+  line-height: 1.7;
+}
+
+.join-fees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+  color: #ffffff;
+}
+
+.enrolment-frame-wrap {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(180, 210, 255, 0.25);
+}
+
+.enrolment-frame {
+  display: block;
+  width: 100%;
+  min-height: 1350px;
+  border: 0;
+  background: #ffffff;
+}
+
+@media (max-width: 650px) {
+
+  .join-section {
+    padding: 70px 16px;
+  }
+
+  .join-copy {
+    margin-bottom: 28px;
+  }
+
+  .join-fees {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .join-fees span {
+    display: none;
+  }
+
+  .enrolment-frame-wrap {
+    border-radius: 14px;
+  }
+
+  .enrolment-frame {
+    min-height: 1650px;
+  }
+}

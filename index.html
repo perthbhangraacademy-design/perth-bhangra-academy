@@ -95,7 +95,20 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-image" aria-hidden="true"></div>
+      
+     <video
+  class="hero-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata"
+  poster="assets/hero.jpg"
+  aria-hidden="true"
+>
+  <source src="assets/hero-bhangra.mp4" type="video/mp4">
+</video>
+      
       <div class="hero-darken" aria-hidden="true"></div>
 
       <div class="tech-grid" aria-hidden="true"></div>
@@ -134,7 +147,7 @@
             <span>→</span>
           </a>
 
-          <a class="video-cta" href="#about">
+          <a class="video-cta" href="#home" id="replayHeroVideo">
             <span class="play-icon">▶</span>
             Watch Video
           </a>

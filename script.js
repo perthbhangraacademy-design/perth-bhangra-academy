@@ -50,3 +50,175 @@ document.querySelectorAll(".reveal-scroll").forEach((element) => {
 });
 
 year.textContent = new Date().getFullYear();
+/* =========================
+   PBA GALLERY LIGHTBOX
+   ========================= */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('galleryLightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const closeButton = document.getElementById('lightboxClose');
+  const prevButton = document.getElementById('lightboxPrev');
+  const nextButton = document.getElementById('lightboxNext');
+  const counter = document.getElementById('lightboxCounter');
+
+  if (!galleryItems.length || !lightbox || !lightboxImage) {
+    return;
+  }
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+
+    if (index < 0) {
+      index = galleryItems.length - 1;
+    }
+
+    if (index >= galleryItems.length) {
+      index = 0;
+    }
+
+    currentIndex = index;
+
+    const image = galleryItems[currentIndex].querySelector('img');
+
+    if (!image) {
+      return;
+    }
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+
+    if (counter) {
+      counter.textContent =
+        (currentIndex + 1) + ' / ' + galleryItems.length;
+    }
+  }
+
+
+  function openLightbox(index) {
+
+    showImage(index);
+
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+
+    document.body.style.overflow = 'hidden';
+  }
+
+
+  function closeLightbox() {
+
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+
+    document.body.style.overflow = '';
+  }
+
+
+  galleryItems.forEach(function (item, index) {
+
+    item.addEventListener('click', function () {
+      openLightbox(index);
+    });
+
+  });
+
+
+  if (closeButton) {
+    closeButton.addEventListener('click', closeLightbox);
+  }
+
+
+  if (prevButton) {
+    prevButton.addEventListener('click', function () {
+      showImage(currentIndex - 1);
+    });
+  }
+
+
+  if (nextButton) {
+    nextButton.addEventListener('click', function () {
+      showImage(currentIndex + 1);
+    });
+  }
+
+
+  /* Close when clicking dark background */
+
+  lightbox.addEventListener('click', function (event) {
+
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+
+  });
+
+
+  /* Keyboard controls */
+
+  document.addEventListener('keydown', function (event) {
+
+    if (!lightbox.classList.contains('open')) {
+      return;
+    }
+
+    if (event.key === 'Escape') {
+      closeLightbox();
+    }
+
+    if (event.key === 'ArrowLeft') {
+      showImage(currentIndex - 1);
+    }
+
+    if (event.key === 'ArrowRight') {
+      showImage(currentIndex + 1);
+    }
+
+  });
+
+
+  /* Mobile swipe */
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  lightbox.addEventListener(
+    'touchstart',
+    function (event) {
+
+      touchStartX =
+        event.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+  );
+
+
+  lightbox.addEventListener(
+    'touchend',
+    function (event) {
+
+      touchEndX =
+        event.changedTouches[0].screenX;
+
+      const swipeDistance =
+        touchEndX - touchStartX;
+
+      if (Math.abs(swipeDistance) < 50) {
+        return;
+      }
+
+      if (swipeDistance > 0) {
+        showImage(currentIndex - 1);
+      } else {
+        showImage(currentIndex + 1);
+      }
+
+    },
+    { passive: true }
+  );
+
+});

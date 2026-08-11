@@ -2445,3 +2445,15 @@ footer p {
   }
 
 }
+/* FINAL MOBILE MENU VISIBILITY FIX */
+@media (max-width: 650px) {
+
+  .main-nav {
+    display: none !important;
+  }
+
+  .main-nav.open {
+    display: flex !important;
+  }
+
+}

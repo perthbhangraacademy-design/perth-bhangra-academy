@@ -4,11 +4,16 @@ const menuButton = document.getElementById("menuButton");
 const mainNav = document.getElementById("mainNav");
 const year = document.getElementById("year");
 
-window.addEventListener("load", () => {
-  window.setTimeout(() => {
+function hidePageLoader() {
+  if (pageLoader) {
     pageLoader.classList.add("hidden");
-  }, 650);
-});
+  }
+}
+
+document.addEventListener("DOMContentLoaded", hidePageLoader);
+
+/* Backup so the loader can never get stuck */
+window.setTimeout(hidePageLoader, 1800);
 
 window.addEventListener("scroll", () => {
   siteHeader.classList.toggle("scrolled", window.scrollY > 25);

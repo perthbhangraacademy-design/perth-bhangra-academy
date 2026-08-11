@@ -19,12 +19,47 @@ window.addEventListener("scroll", () => {
   siteHeader.classList.toggle("scrolled", window.scrollY > 25);
 });
 
-menuButton.addEventListener("click", () => {
-  const isOpen = mainNav.classList.toggle("open");
+/* MOBILE MENU */
 
-  menuButton.classList.toggle("active", isOpen);
-  menuButton.setAttribute("aria-expanded", String(isOpen));
-  document.body.classList.toggle("menu-open", isOpen);
+document.addEventListener("click", function (event) {
+
+  const button = event.target.closest("#menuButton");
+
+  if (button) {
+
+    const nav = document.getElementById("mainNav");
+
+    if (!nav) return;
+
+    const isOpen = nav.classList.toggle("open");
+
+    button.classList.toggle("active", isOpen);
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+    return;
+  }
+
+
+  /* Close menu after selecting a link */
+
+  const navLink = event.target.closest("#mainNav a");
+
+  if (navLink) {
+
+    const nav = document.getElementById("mainNav");
+    const button = document.getElementById("menuButton");
+
+    if (nav) {
+      nav.classList.remove("open");
+    }
+
+    if (button) {
+      button.classList.remove("active");
+      button.setAttribute("aria-expanded", "false");
+    }
+
+  }
+
 });
 
 mainNav.querySelectorAll("a").forEach((link) => {

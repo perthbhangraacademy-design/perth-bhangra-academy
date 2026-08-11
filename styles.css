@@ -2457,3 +2457,15 @@ footer p {
   }
 
 }
+/* FORCE MOBILE MENU CLOSED UNTIL HAMBURGER IS PRESSED */
+@media (max-width: 650px) {
+
+  .main-nav {
+    display: none !important;
+  }
+
+  .main-nav.open {
+    display: flex !important;
+  }
+
+}

@@ -227,3 +227,32 @@ document.addEventListener('DOMContentLoaded', function () {
   );
 
 });
+/* =========================
+   COACH PROFILE TOGGLES
+   ========================= */
+
+document.querySelectorAll('.coach-profile-button').forEach(function (button) {
+
+  button.addEventListener('click', function () {
+
+    const profile =
+      button.nextElementSibling;
+
+    if (!profile) return;
+
+    const isOpen =
+      profile.classList.toggle('open');
+
+    button.setAttribute(
+      'aria-expanded',
+      isOpen ? 'true' : 'false'
+    );
+
+    button.textContent =
+      isOpen
+        ? 'Close Full Profile ↑'
+        : 'View Full Profile ↓';
+
+  });
+
+});

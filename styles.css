@@ -2085,3 +2085,282 @@ footer p {
     font-size: 2.5rem;
   }
 }
+/* =========================================================
+   FINAL MOBILE EXPERIENCE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  /* ---------- HEADER ---------- */
+
+  .glass-nav {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    min-height: 72px;
+    padding: 8px 12px;
+    border-radius: 22px;
+
+    grid-template-columns: 1fr auto;
+    z-index: 5000;
+  }
+
+  .brand {
+    min-width: 0;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+  }
+
+  .brand-copy {
+    min-width: 0;
+  }
+
+  .brand-copy strong {
+    font-size: .68rem;
+    letter-spacing: .16em;
+  }
+
+  .brand-copy small {
+    font-size: .60rem;
+    letter-spacing: .15em;
+  }
+
+
+  /* ---------- HAMBURGER ---------- */
+
+  .menu-button {
+    display: block;
+    position: relative;
+    z-index: 5002;
+    justify-self: end;
+  }
+
+
+  /* ---------- MOBILE MENU ---------- */
+
+  .main-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 5001;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 22px;
+    padding: 110px 30px 50px;
+
+    background: rgba(2, 7, 14, .985);
+    backdrop-filter: blur(18px);
+
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    transform: translateX(100%);
+    transition: transform .35s ease;
+  }
+
+  .main-nav.open {
+    transform: translateX(0);
+  }
+
+  .main-nav a {
+    width: auto;
+    padding: 8px 12px;
+    text-align: center;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    min-height: 100svh !important;
+    height: auto;
+    padding:
+      120px
+      20px
+      55px !important;
+
+    overflow: hidden;
+  }
+
+
+  /* ---------- HERO VIDEO ---------- */
+
+  .hero-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /*
+      Adjust this later if the dancer/person
+      needs to move left or right.
+    */
+    object-position: 58% center;
+
+    filter:
+      brightness(.68)
+      contrast(1.08)
+      saturate(1.05);
+  }
+
+
+  /* ---------- DARK OVERLAY ---------- */
+
+  .hero-darken {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0,4,10,.22) 0%,
+        rgba(0,4,10,.30) 35%,
+        rgba(0,4,10,.78) 72%,
+        rgba(0,4,10,.98) 100%
+      );
+  }
+
+
+  /* ---------- HERO CONTENT ---------- */
+
+  .hero-content {
+    position: relative;
+    z-index: 5;
+
+    max-width: 100%;
+    padding-top: 42vh !important;
+  }
+
+  .hero-kicker {
+    margin-bottom: 14px;
+    font-size: .72rem;
+    letter-spacing: .28em;
+  }
+
+  .hero-title {
+    font-size: clamp(3.8rem, 18vw, 5.5rem);
+    line-height: .86;
+    letter-spacing: -.05em;
+  }
+
+  .hero-subtitle {
+    margin-top: 18px;
+    font-size: .84rem;
+    line-height: 1.6;
+    letter-spacing: .10em;
+  }
+
+  .hero-tags {
+    margin: 18px 0;
+    font-size: .72rem;
+    line-height: 1.7;
+  }
+
+
+  /* ---------- HERO BUTTONS ---------- */
+
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .primary-cta,
+  .video-cta {
+    width: 100%;
+    min-height: 54px;
+  }
+
+
+  /* ---------- REMOVE DESKTOP DECORATION ---------- */
+
+  .folk-script,
+  .orbit,
+  .slide-index,
+  .side-message,
+  .scroll-cue {
+    display: none !important;
+  }
+
+
+  /* ---------- STATS ---------- */
+
+  .stats-glass {
+    position: relative !important;
+
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    width: 100%;
+    margin-top: 38px;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    border-radius: 18px;
+  }
+
+  .stats-glass article,
+  .stats-glass article:nth-child(odd),
+  .stats-glass article:nth-child(even) {
+    padding: 16px 14px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.10);
+  }
+
+  .stats-glass strong {
+    font-size: 1.35rem;
+  }
+
+  .stats-glass small {
+    font-size: .58rem;
+  }
+
+  .stats-glass p {
+    font-size: .68rem;
+  }
+
+
+  /* ---------- GENERAL SECTIONS ---------- */
+
+  .content-section,
+  .coaches-section,
+  .class-section,
+  .gallery-section,
+  .join-section,
+  footer {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+
+  /* ---------- COACHES ---------- */
+
+  .coaches-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* ---------- CLASSES ---------- */
+
+  .class-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+
+  /* ---------- GALLERY ---------- */
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}

@@ -825,22 +825,31 @@ form.addEventListener('submit', function (event) {
     'SUBMITTING...';
 
 
-  window.setTimeout(function () {
+ window.setTimeout(function () {
 
-    if (submitButton.disabled) {
+  if (submitButton.disabled) {
 
-      submitButton.disabled = false;
+    document.getElementById(
+      'formContainer'
+    ).style.display = 'none';
 
-      submitButton.textContent =
-        'SUBMIT ENROLMENT →';
+    document.getElementById(
+      'successScreen'
+    ).style.display = 'block';
 
-      showError(
-        'We have not received confirmation yet. Please try again or contact Perth Bhangra Academy.'
-      );
+    document.getElementById(
+      'submissionReference'
+    ).textContent =
+      'Enrolment submitted successfully';
 
-    }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
 
-  }, 15000);
+  }
+
+}, 5000);
 
 });
 

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Enrol | Perth Bhangra Academy
+  </title>
+
+  <meta
+    name="description"
+    content="Enrol in Bhangra classes with Perth Bhangra Academy in Canning Vale, Brabham and Piara Waters, Western Australia.">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #111827;
+      font-family: Arial, sans-serif;
+    }
+
+    .topbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 12px 5vw;
+      background: #050a12;
+      color: #ffffff;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      display: block;
+      margin-top: 3px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .back-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    main {
+      padding: 55px 20px 80px;
+    }
+
+    .form-wrap {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin-bottom: 12px;
+      color: #475569;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      color: #111827;
+      font-size: clamp(42px, 7vw, 70px);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin-bottom: 30px;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .fee-box {
+      margin: 25px 0 32px;
+      padding: 22px;
+      border: 1px solid #cbd5e1;
+      border-radius: 16px;
+      background: #f8fafc;
+    }
+
+    .fee-box h3 {
+      margin-top: 0;
+    }
+
+    .fee-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin: 8px 0;
+    }
+
+    .fee-note {
+      margin-top: 14px;
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    form {
+      display: grid;
+      gap: 22px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label,
+    .field-title {
+      color: #111827;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-height: 52px;
+      padding: 0 15px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      background: #ffffff;
+      color: #111827;
+      font-size: 16px;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #64748b;
+      outline: none;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .option {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      background: #f8fafc;
+      cursor: pointer;
+    }
+
+    .option input,
+    .agreement input {
+      width: 19px;
+      height: 19px;
+      min-height: auto;
+    }
+
+    .guardian-field {
+      display: none;
+    }
+
+    .guardian-field.show {
+      display: grid;
+    }
+
+    .consent-box {
+      padding: 20px;
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      background: #f8fafc;
+    }
+
+    .consent-box p {
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .agreement {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+
+    .declaration {
+      padding: 18px;
+      border-left: 3px solid #64748b;
+      background: #f8fafc;
+      color: #334155;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .submit-button {
+      min-height: 58px;
+      border: 0;
+      border-radius: 10px;
+      background: #111827;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .submit-button:disabled {
+      opacity: .55;
+      cursor: wait;
+    }
+
+    .error-message {
+      display: none;
+      padding: 14px;
+      border: 1px solid #fecdd3;
+      border-radius: 10px;
+      background: #fff1f2;
+      color: #9f1239;
+    }
+
+    .success-screen {
+      display: none;
+      max-width: 760px;
+      margin: 60px auto;
+      padding: 45px 25px;
+      border: 1px solid #cbd5e1;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .success-screen h2 {
+      margin-top: 0;
+      font-size: clamp(32px, 7vw, 56px);
+      text-transform: uppercase;
+    }
+
+    .success-screen p {
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .reference {
+      display: inline-block;
+      margin: 18px 0;
+      padding: 12px 18px;
+      border-radius: 8px;
+      background: #f1f5f9;
+      font-weight: 700;
+    }
+
+    iframe {
+      display: none;
+    }
+
+    @media (max-width: 650px) {
+
+      .topbar {
+        padding: 10px 14px;
+      }
+
+      .brand strong {
+        font-size: 11px;
+      }
+
+      .brand span {
+        font-size: 9px;
+      }
+
+      main {
+        padding: 40px 15px 65px;
+      }
+
+      .row,
+      .option-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fee-row {
+        flex-direction: column;
+        gap: 3px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<header class="topbar">
+
+  <a class="brand" href="index.html">
+
+    <img
+      src="assets/logo.jpg"
+      alt="Perth Bhangra Academy logo">
+
+    <div>
+      <strong>Perth Bhangra</strong>
+      <span>Academy</span>
+    </div>
+
+  </a>
+
+  <a class="back-link" href="index.html">
+    ← Back to Website
+  </a>
+
+</header>
+
+
+<main>
+
+<div class="form-wrap" id="formContainer">
+
+  <div class="eyebrow">
+    Perth Bhangra Academy
+  </div>
+
+  <h1>Join PBA</h1>
+
+  <p class="intro">
+    Complete the enrolment form below and our team will contact you
+    regarding your selected Perth Bhangra Academy class.
+  </p>
+
+
+  <div class="fee-box">
+
+    <h3>Class Fees</h3>
+
+    <div class="fee-row">
+      <span>Casual Class</span>
+      <strong>$20 per class</strong>
+    </div>
+
+    <div class="fee-row">
+      <span>10-Class Package</span>
+      <strong>$150</strong>
+    </div>
+
+    <div class="fee-note">
+      The 10-class package includes up to 2 complimentary class
+      adjustments for genuine emergency or holiday circumstances.
+    </div>
+
+  </div>
+
+
+  <form
+    id="enrolmentForm"
+    action="https://script.google.com/macros/s/AKfycbxFxKBJj5Mkvjsl0TIqxICmW9ugf8nUlTdWgu6gtNLMBhzhvIpOF_Ua1SJkgBRTEuNE/exec"
+    method="post"
+    target="submissionFrame">
+
+    <div class="row">
+
+      <div class="field">
+        <label for="firstName">First Name *</label>
+        <input
+          id="firstName"
+          name="firstName"
+          required>
+      </div>
+
+      <div class="field">
+        <label for="lastName">Last Name *</label>
+        <input
+          id="lastName"
+          name="lastName"
+          required>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+
+      <div class="field">
+        <label for="age">Age *</label>
+
+        <input
+          type="number"
+          id="age"
+          name="age"
+          min="3"
+          max="100"
+          required>
+      </div>
+
+      <div
+        class="field guardian-field"
+        id="guardianField">
+
+        <label for="guardianName">
+          Parent / Guardian Full Name *
+        </label>
+
+        <input
+          id="guardianName"
+          name="guardianName">
+
+      </div>
+
+    </div>
+
+
+    <div class="row">
+
+      <div class="field">
+
+        <label for="email">
+          Email Address *
+        </label>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required>
+
+      </div>
+
+      <div class="field">
+
+        <label for="phone">
+          Mobile Number *
+        </label>
+
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="+61 4XX XXX XXX"
+          required>
+
+      </div>
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="classLocation">
+        Preferred Class Location *
+      </label>
+
+      <select
+        id="classLocation"
+        name="classLocation"
+        required>
+
+        <option value="">
+          Select a location
+        </option>
+
+        <option value="Canning Vale">
+          Canning Vale
+        </option>
+
+        <option value="Brabham">
+          Brabham
+        </option>
+
+        <option value="Piara Waters">
+          Piara Waters
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div class="field">
+
+      <div class="field-title">
+        Which classes are you interested in? *
+      </div>
+
+      <div class="option-grid">
+
+        <label class="option">
+          <input
+            type="checkbox"
+            class="class-checkbox"
+            value="Kids Bhangra">
+          Kids Bhangra
+        </label>
+
+        <label class="option">
+          <input
+            type="checkbox"
+            class="class-checkbox"
+            value="Adult Bhangra">
+          Adult Bhangra
+        </label>
+
+        <label class="option">
+          <input
+            type="checkbox"
+            class="class-checkbox"
+            value="Girls & Women">
+          Girls & Women
+        </label>
+
+        <label class="option">
+          <input
+            type="checkbox"
+            class="class-checkbox"
+            value="Competition Team">
+          Competition Team
+        </label>
+
+      </div>
+
+      <input
+        type="hidden"
+        id="classType"
+        name="classType">
+
+    </div>
+
+
+    <div class="field">
+
+      <div class="field-title">
+        Preferred Payment Option *
+      </div>
+
+      <div class="option-grid">
+
+        <label class="option">
+          <input
+            type="radio"
+            name="paymentOption"
+            value="Casual - $20 per class"
+            required>
+          Casual — $20 per class
+        </label>
+
+        <label class="option">
+          <input
+            type="radio"
+            name="paymentOption"
+            value="10-Class Package - $150">
+          10-Class Package — $150
+        </label>
+
+      </div>
+
+    </div>
+
+
+    <div class="consent-box">
+
+      <div class="field-title">
+        Policies & Media Consent
+      </div>
+
+      <p>
+        I confirm that I have read and agree to the Perth Bhangra Academy
+        Privacy Policy, Refund Policy and Media & Social Media Policy.
+        I consent to photography and video recording during classes,
+        rehearsals, performances and Academy activities.
+      </p>
+
+      <label class="agreement">
+
+        <input
+          type="checkbox"
+          id="policyConsent"
+          required>
+
+        <span>
+          I have read, understood and agree to the above policies
+          and media consent.
+        </span>
+
+      </label>
+
+    </div>
+
+
+    <div class="declaration">
+
+      By signing below, I confirm that the information provided is
+      correct and that I am authorised to complete this enrolment for
+      myself or, if the participant is under 18, as their parent or
+      legal guardian.
+
+    </div>
+
+
+    <div class="field">
+
+      <label for="signatureName">
+        Participant Signature (18+) /
+        Parent or Guardian Signature (Under 18) *
+      </label>
+
+      <input
+        id="signatureName"
+        name="signatureName"
+        placeholder="Type full legal name"
+        required>
+
+    </div>
+
+
+    <div
+      class="error-message"
+      id="errorMessage">
+    </div>
+
+
+    <button
+      class="submit-button"
+      id="submitButton"
+      type="submit">
+
+      SUBMIT ENROLMENT →
+
+    </button>
+
+  </form>
+
+</div>
+
+
+<div
+  class="success-screen"
+  id="successScreen">
+
+  <h2>Enrolment Received</h2>
+
+  <p>
+    Thank you for joining Perth Bhangra Academy.
+    Your enrolment has been received.
+  </p>
+
+  <div
+    class="reference"
+    id="submissionReference">
+  </div>
+
+  <p>
+    A confirmation has been sent to your email address.
+    Our team will contact you regarding your selected class.
+  </p>
+
+  <p>
+    <a href="index.html">
+      Return to Perth Bhangra Academy
+    </a>
+  </p>
+
+</div>
+
+
+<iframe
+  name="submissionFrame"
+  id="submissionFrame"
+  title="Submission response">
+</iframe>
+
+</main>
+
+
+<script>
+
+const form =
+  document.getElementById('enrolmentForm');
+
+const ageInput =
+  document.getElementById('age');
+
+const guardianField =
+  document.getElementById('guardianField');
+
+const guardianName =
+  document.getElementById('guardianName');
+
+const submitButton =
+  document.getElementById('submitButton');
+
+const errorMessage =
+  document.getElementById('errorMessage');
+
+
+ageInput.addEventListener('input', function () {
+
+  const age = Number(this.value);
+
+  if (age && age < 18) {
+
+    guardianField.classList.add('show');
+    guardianName.required = true;
+
+  } else {
+
+    guardianField.classList.remove('show');
+    guardianName.required = false;
+    guardianName.value = '';
+
+  }
+
+});
+
+
+form.addEventListener('submit', function (event) {
+
+  errorMessage.style.display = 'none';
+
+  const selectedClasses =
+    Array.from(
+      document.querySelectorAll(
+        '.class-checkbox:checked'
+      )
+    ).map(function (input) {
+      return input.value;
+    });
+
+
+  if (!selectedClasses.length) {
+
+    event.preventDefault();
+
+    showError(
+      'Please select at least one class.'
+    );
+
+    return;
+  }
+
+
+  let phone =
+    document
+      .getElementById('phone')
+      .value
+      .replace(/\s+/g, '')
+      .replace(/-/g, '');
+
+
+  if (phone.startsWith('04')) {
+    phone = '+61' + phone.substring(1);
+  }
+
+  if (phone.startsWith('614')) {
+    phone = '+' + phone;
+  }
+
+
+  if (!/^\+614\d{8}$/.test(phone)) {
+
+    event.preventDefault();
+
+    showError(
+      'Please enter a valid Australian mobile number.'
+    );
+
+    return;
+  }
+
+
+  document.getElementById('phone').value =
+    phone;
+
+  document.getElementById('classType').value =
+    JSON.stringify(selectedClasses);
+
+
+  submitButton.disabled = true;
+  submitButton.textContent =
+    'SUBMITTING...';
+
+
+  window.setTimeout(function () {
+
+    if (submitButton.disabled) {
+
+      submitButton.disabled = false;
+
+      submitButton.textContent =
+        'SUBMIT ENROLMENT →';
+
+      showError(
+        'We have not received confirmation yet. Please try again or contact Perth Bhangra Academy.'
+      );
+
+    }
+
+  }, 15000);
+
+});
+
+
+window.addEventListener(
+  'message',
+  function (event) {
+
+    const data = event.data;
+
+    if (!data || !data.type) {
+      return;
+    }
+
+
+    if (data.type === 'PBA_ENROLMENT_SUCCESS') {
+
+      document.getElementById(
+        'formContainer'
+      ).style.display = 'none';
+
+      document.getElementById(
+        'successScreen'
+      ).style.display = 'block';
+
+      document.getElementById(
+        'submissionReference'
+      ).textContent =
+        data.submissionId
+          ? 'Reference: ' + data.submissionId
+          : 'Enrolment received';
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+    }
+
+
+    if (data.type === 'PBA_ENROLMENT_ERROR') {
+
+      submitButton.disabled = false;
+
+      submitButton.textContent =
+        'SUBMIT ENROLMENT →';
+
+      showError(
+        'We could not submit your enrolment. Please try again.'
+      );
+
+    }
+
+  }
+);
+
+
+function showError(message) {
+
+  errorMessage.textContent = message;
+  errorMessage.style.display = 'block';
+
+}
+
+</script>
+
+</body>
+</html>

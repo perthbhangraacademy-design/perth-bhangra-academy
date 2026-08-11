@@ -231,28 +231,27 @@ document.addEventListener('DOMContentLoaded', function () {
    COACH PROFILE TOGGLES
    ========================= */
 
-document.querySelectorAll('.coach-profile-button').forEach(function (button) {
+document.addEventListener('click', function (event) {
 
-  button.addEventListener('click', function () {
+  const button = event.target.closest('.coach-profile-button');
 
-    const profile =
-      button.nextElementSibling;
+  if (!button) return;
 
-    if (!profile) return;
+  const profile = button.nextElementSibling;
 
-    const isOpen =
-      profile.classList.toggle('open');
+  if (!profile || !profile.classList.contains('coach-full-profile')) {
+    return;
+  }
 
-    button.setAttribute(
-      'aria-expanded',
-      isOpen ? 'true' : 'false'
-    );
+  const isOpen = profile.classList.toggle('open');
 
-    button.textContent =
-      isOpen
-        ? 'Close Full Profile ↑'
-        : 'View Full Profile ↓';
+  button.setAttribute(
+    'aria-expanded',
+    isOpen ? 'true' : 'false'
+  );
 
-  });
+  button.textContent = isOpen
+    ? 'Close Full Profile ↑'
+    : 'View Full Profile ↓';
 
 });

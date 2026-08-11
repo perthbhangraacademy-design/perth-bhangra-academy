@@ -1674,3 +1674,218 @@ footer p {
     right: calc(50% - 58px);
   }
 }
+/* =========================================
+   PBA PREMIUM EDITORIAL GALLERY
+   ========================================= */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: 90px;
+  gap: 12px;
+}
+
+/* Default tile */
+.gallery-item {
+  grid-column: span 3;
+  grid-row: span 3;
+  aspect-ratio: auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 14px;
+  background: #08111d;
+  cursor: pointer;
+}
+
+/* Feature images */
+.gallery-item:nth-child(1),
+.gallery-item:nth-child(6),
+.gallery-item:nth-child(11),
+.gallery-item:nth-child(16) {
+  grid-column: span 6;
+  grid-row: span 6;
+}
+
+/* Wide images */
+.gallery-item:nth-child(4),
+.gallery-item:nth-child(9),
+.gallery-item:nth-child(14),
+.gallery-item:nth-child(19) {
+  grid-column: span 6;
+  grid-row: span 3;
+}
+
+/* Tall portrait images */
+.gallery-item:nth-child(3),
+.gallery-item:nth-child(8),
+.gallery-item:nth-child(13),
+.gallery-item:nth-child(18) {
+  grid-column: span 3;
+  grid-row: span 5;
+}
+
+/* Standard medium images */
+.gallery-item:nth-child(2),
+.gallery-item:nth-child(5),
+.gallery-item:nth-child(7),
+.gallery-item:nth-child(10),
+.gallery-item:nth-child(12),
+.gallery-item:nth-child(15),
+.gallery-item:nth-child(17),
+.gallery-item:nth-child(20) {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition:
+    transform .5s ease,
+    filter .5s ease;
+}
+
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0) 55%,
+      rgba(0,0,0,.30) 100%
+    );
+  opacity: .35;
+  transition: opacity .4s ease;
+  pointer-events: none;
+}
+
+.gallery-item::after {
+  content: "VIEW";
+  inset: auto;
+  background: none;
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(8px);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition:
+    opacity .35s ease,
+    transform .35s ease;
+  pointer-events: none;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.06) contrast(1.03);
+}
+
+.gallery-item:hover::before {
+  opacity: .75;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Slightly tighter heading */
+.gallery-heading {
+  max-width: 1000px;
+  margin-bottom: 34px;
+}
+
+.gallery-heading h2 {
+  margin-bottom: 14px;
+}
+
+.gallery-intro {
+  max-width: 620px;
+}
+
+
+/* Tablet */
+@media (max-width: 1000px) {
+
+  .gallery-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-rows: 85px;
+  }
+
+  .gallery-item,
+  .gallery-item:nth-child(n) {
+    grid-column: span 3;
+    grid-row: span 3;
+  }
+
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(6),
+  .gallery-item:nth-child(11),
+  .gallery-item:nth-child(16) {
+    grid-column: span 6;
+    grid-row: span 5;
+  }
+
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(8),
+  .gallery-item:nth-child(13),
+  .gallery-item:nth-child(18) {
+    grid-column: span 3;
+    grid-row: span 4;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 650px) {
+
+  .gallery-section {
+    padding: 70px 14px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 115px;
+    gap: 8px;
+  }
+
+  .gallery-item,
+  .gallery-item:nth-child(n) {
+    grid-column: span 1;
+    grid-row: span 2;
+    border-radius: 9px;
+  }
+
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(6),
+  .gallery-item:nth-child(11),
+  .gallery-item:nth-child(16) {
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(8),
+  .gallery-item:nth-child(13),
+  .gallery-item:nth-child(18) {
+    grid-column: span 1;
+    grid-row: span 3;
+  }
+
+  .gallery-item::after {
+    display: none;
+  }
+}

@@ -1889,3 +1889,8 @@ footer p {
     display: none;
   }
 }
+/* TEMPORARY FAILSAFE — always show page sections */
+.reveal-scroll {
+  opacity: 1 !important;
+  transform: none !important;
+}

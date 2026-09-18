@@ -241,6 +241,16 @@
       line-height: 1.7;
     }
 
+        .form-notice {
+                padding: 16px 18px;
+                border-left: 3px solid #b45309;
+                background: #fffbeb;
+                color: #92400e;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 1.6;
+        }
+
     .submit-button {
       min-height: 58px;
       border: 0;
@@ -404,6 +414,10 @@
     method="post"
     target="submissionFrame">
 
+    <div class="form-notice">
+      This form is for new, confirmed students only.
+    </div>
+    
     <div class="row">
 
       <div class="field">
@@ -511,10 +525,6 @@
 
         <option value="Brabham">
           Brabham
-        </option>
-
-        <option value="Piara Waters">
-          Piara Waters
         </option>
 
       </select>
